@@ -6,7 +6,7 @@ import java.util.Map;
 public class SubArraySumEqualsK_560 {
     public static int subarraySum(int[] nums, int k) {
         Map<Integer, Integer> hmap = new HashMap<>();
-        hmap.put(0,1);
+        hmap.put(0, 1);
         int count = 0, sum = 0;
         for (int i = 0; i < nums.length; i++) {
             sum += nums[i];
@@ -19,7 +19,7 @@ public class SubArraySumEqualsK_560 {
     }
 
     public static void main(String[] args) {
-        int arr[] = new int[]{0,0,0,0};
+        int arr[] = new int[]{0, 0, 0, 0};
         int k = 0;
         System.out.println(subarraySum(arr, k));
     }
