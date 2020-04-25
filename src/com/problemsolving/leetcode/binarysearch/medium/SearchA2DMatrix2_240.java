@@ -13,18 +13,18 @@ package com.problemsolving.leetcode.binarysearch.medium;
  * Given target = 20, return false.
  */
 public class SearchA2DMatrix2_240 {
-    public static boolean searchMatrix(int[][] arr, int k) {
-        int m = arr.length;
-        if (m == 0) return false;
-        int n = arr[0].length;
-        int i = 0, j = n - 1;
-        while (i >= 0 && i < m && j >= 0 && j < n) {
-            if (arr[i][j] == k) return true;
-            else if (arr[i][j] > k) j--;
-            else i++;
+        public static boolean searchMatrix(int[][] arr, int k) {
+            int m = arr.length;
+            if (m == 0) return false;
+            int n = arr[0].length;
+            int i = 0, j = n - 1;
+            while (i >= 0 && i < m && j >= 0 && j < n) {
+                if (arr[i][j] == k) return true;
+                else if (arr[i][j] > k) j--;
+                else i++;
+            }
+            return false;
         }
-        return false;
-    }
 
     public static void main(String[] args) {
         int arr[][] = new int[][]{{1, 1}};

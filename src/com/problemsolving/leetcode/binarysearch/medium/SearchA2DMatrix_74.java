@@ -11,26 +11,29 @@ package com.problemsolving.leetcode.binarysearch.medium;
  * Output: true
  */
 public class SearchA2DMatrix_74 {
-    public static boolean searchMatrix(int[][] t, int k) {
-        int m = t.length;
+    public static boolean searchMatrix(int[][] matrix, int target) {
+        int m = matrix.length;
         if (m == 0) return false;
-        int n = t[0].length;
-        int i = 0, j = n - 1;
-        while (i >= 0 && i < m && j >= 0 && j < n) {
-            if (t[i][j] == k) {
+        int n = matrix[0].length;
+        int low = 0, high = m * n - 1, pivotIdx, pivotElement;
+        while (low <= high) {
+            pivotIdx = low + (high - low) / 2;
+            pivotElement = matrix[pivotIdx / n][pivotIdx % n];
+            if (pivotElement == target) {
                 return true;
-            } else if (t[i][j] > k) {
-                j--;
-            } else if (t[i][j] < k) {
-                i++;
+            } else {
+                if (pivotElement > target)
+                    high = pivotIdx - 1;
+                else
+                    low = pivotIdx + 1;
             }
         }
         return false;
     }
 
     public static void main(String[] args) {
-        int arr[][] = new int[][]{};
-        int k = 13;
+        int arr[][] = new int[][]{{1, 4}, {2,5}};
+        int k = 2;
         System.out.println(searchMatrix(arr, k));
     }
 }

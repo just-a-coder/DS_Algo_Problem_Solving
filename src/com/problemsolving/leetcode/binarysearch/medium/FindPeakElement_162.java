@@ -19,7 +19,7 @@ public class FindPeakElement_162 {
     }
 
     public static void main(String[] args) {
-        int arr[] = new int[]{2, 2};
+        int arr[] = new int[]{1,2,1,3,5,6,7};
         System.out.println(findPeakElement(arr));
     }
 }
