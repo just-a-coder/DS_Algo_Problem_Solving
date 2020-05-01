@@ -4,28 +4,27 @@ public class FirstBadVersion_278 {
     static int count = 0;
 
     public static int firstBadVersion(int n) {
-        int m = 1, mid, res = 0;
-        while (m <= n) {
-            mid = m + (n - m) / 2;
+        int low = 1, high = n, mid;
+        while (low < high) {
+            mid = low + (high - low)/2;
             if (isBadVersion(mid)) {
-                res = mid;
-                n = mid - 1;
+                high = mid;
             } else {
-                m = mid + 1;
+                low = mid+1;
             }
         }
-        return res;
+        return low;
     }
 
     // For TestCase
     public static boolean isBadVersion(int version) {
-/*        if (version == 1) {
+        if (version == 1) {
             return false;
         }else if (version == 2) {
             return false;
         }else if (version == 3) {
             return true;
-        }*/
+        }
         return true;
     }
 
