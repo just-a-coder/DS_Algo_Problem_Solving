@@ -1,4 +1,4 @@
-package com.problemsolving.hackerrank.algo;
+package com.problemsolving.hackerrank.algo.easy;
 
 public class ViralAdvertising {
     public static void main(String[] args) {

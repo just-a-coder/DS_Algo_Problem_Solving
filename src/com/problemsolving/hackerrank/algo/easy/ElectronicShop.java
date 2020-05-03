@@ -1,9 +1,6 @@
-package com.problemsolving.hackerrank.algo;
+package com.problemsolving.hackerrank.algo.easy;
 
-import java.io.BufferedReader;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 
 public class ElectronicShop {
     public static void main(String[] args) {

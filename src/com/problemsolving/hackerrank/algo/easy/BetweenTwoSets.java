@@ -1,9 +1,4 @@
-package com.problemsolving.hackerrank.algo;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Vector;
+package com.problemsolving.hackerrank.algo.easy;
 
 public class BetweenTwoSets {
 

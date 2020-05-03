@@ -1,6 +1,4 @@
-package com.problemsolving.hackerrank.algo;
-
-import java.util.Scanner;
+package com.problemsolving.hackerrank.algo.easy;
 
 public class LibraryFine {
     public static void main(String[] args) {

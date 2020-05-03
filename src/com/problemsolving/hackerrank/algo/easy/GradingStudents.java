@@ -1,4 +1,4 @@
-package com.problemsolving.hackerrank.algo;
+package com.problemsolving.hackerrank.algo.easy;
 
 import java.util.ArrayList;
 import java.util.List;

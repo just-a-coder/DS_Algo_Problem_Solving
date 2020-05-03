@@ -1,4 +1,4 @@
-package com.problemsolving.hackerrank.algo;
+package com.problemsolving.hackerrank.algo.easy;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

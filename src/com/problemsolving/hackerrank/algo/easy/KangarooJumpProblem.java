@@ -1,4 +1,4 @@
-package com.problemsolving.hackerrank.algo;
+package com.problemsolving.hackerrank.algo.easy;
 
 public class KangarooJumpProblem {
     public static void main(String[] args) {
