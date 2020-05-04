@@ -1,4 +1,4 @@
-package com.problemsolving.leetcode.twopointer;
+package com.problemsolving.leetcode.twopointer.easy;
 
 /**
  * #167
