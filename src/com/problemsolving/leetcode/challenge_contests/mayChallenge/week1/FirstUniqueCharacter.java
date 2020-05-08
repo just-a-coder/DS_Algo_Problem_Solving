@@ -1,7 +1,4 @@
-package com.problemsolving.leetcode.challenge_contests.mayChallenge.week1_7th;
-
-import java.util.HashMap;
-import java.util.Map;
+package com.problemsolving.leetcode.challenge_contests.mayChallenge.week1;
 
 class FirstUniqueCharacter {
 /*    public static int firstUniqChar(String s) {

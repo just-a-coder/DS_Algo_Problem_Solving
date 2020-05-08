@@ -1,4 +1,4 @@
-package com.problemsolving.leetcode.challenge_contests.mayChallenge.week1_7th;
+package com.problemsolving.leetcode.challenge_contests.mayChallenge.week1;
 
 public class RansomNote {
     public static boolean canConstruct(String ransomNote, String magazine) {

@@ -1,8 +1,6 @@
-package com.problemsolving.leetcode.challenge_contests.mayChallenge.week1_7th;
+package com.problemsolving.leetcode.challenge_contests.mayChallenge.week1;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Given an array of size n, find the majority element.

@@ -1,4 +1,4 @@
-package com.problemsolving.leetcode.challenge_contests.mayChallenge.week1_7th;
+package com.problemsolving.leetcode.challenge_contests.mayChallenge.week1;
 
 public class FirstBadVersion_278 {
     static int count = 0;
