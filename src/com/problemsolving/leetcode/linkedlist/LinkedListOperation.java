@@ -42,10 +42,43 @@ public class LinkedListOperation {
      * given only access to that node.
      */
     public void deleteNode(ListNode node) {
-        ListNode prevPtr = null;
-        ListNode currPtr = node;
-        if(node.da)
-
+        if (node.next != null) {
+            node.val = node.next.val;
+            node.next = node.next.next;
+        }
     }
 
+    /**
+     * Given a linked list, determine if it has a cycle in it.
+     */
+    public boolean hasCycle(ListNode head) {
+        ListNode fastPtr = head;
+        ListNode slowPtr = head;
+        while (fastPtr != null && fastPtr.next !=null) {
+            fastPtr = fastPtr.next.next;
+            slowPtr = slowPtr.next;
+            if (fastPtr == slowPtr) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Remove all elements from a linked list of integers that have value val.
+     */
+    public ListNode removeElements(ListNode head, int val) {
+        ListNode prevPtr = head;
+        ListNode currPtr = head;
+        while (currPtr != null) {
+            if (currPtr.val == val) {
+                currPtr = currPtr.next;
+            } else {
+                prevPtr.next = currPtr;
+                prevPtr = prevPtr.next;
+            }
+            currPtr = currPtr.next;
+        }
+        return head;
+    }
 }
