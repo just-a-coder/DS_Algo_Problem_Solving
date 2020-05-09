@@ -54,7 +54,7 @@ public class LinkedListOperation {
     public boolean hasCycle(ListNode head) {
         ListNode fastPtr = head;
         ListNode slowPtr = head;
-        while (fastPtr != null && fastPtr.next !=null) {
+        while (fastPtr != null && fastPtr.next != null) {
             fastPtr = fastPtr.next.next;
             slowPtr = slowPtr.next;
             if (fastPtr == slowPtr) {
@@ -68,17 +68,20 @@ public class LinkedListOperation {
      * Remove all elements from a linked list of integers that have value val.
      */
     public ListNode removeElements(ListNode head, int val) {
-        ListNode prevPtr = head;
-        ListNode currPtr = head;
-        while (currPtr != null) {
-            if (currPtr.val == val) {
-                currPtr = currPtr.next;
-            } else {
-                prevPtr.next = currPtr;
-                prevPtr = prevPtr.next;
-            }
-            currPtr = currPtr.next;
+        ListNode ptr = head;
+        while (head != null && ptr.val == val) {
+            head = ptr.next;
+            ptr = ptr.next;
+        }
+        if (head == null)
+            return head;
+        while (ptr.next != null) {
+            if (ptr.next.val == val)
+                ptr.next = ptr.next.next;
+            else
+                ptr = ptr.next;
         }
         return head;
     }
+
 }
