@@ -18,25 +18,13 @@ public class ValidParenthesis_20 {
         hmap.put(']','[');
     }
 
-    public boolean isValid(String str)
-    {
-        while (str.contains("()") || str.contains("[]") || str.contains("{}"))
-        {
-            str = str.replaceAll("\\(\\)", "")
-                    .replaceAll("\\[\\]", "")
-                    .replaceAll("\\{\\}", "");
-        }
-        return str.length() == 0;
-    }
-
-/*    public boolean isValid(String s) {
-        if(s.isEmpty()) return true;
+    public boolean isValid(String s) {
         Stack<Character> st = new Stack<>();
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
             if (hmap.containsKey(c)) {
                 char top = (st.isEmpty())?'#':st.pop();
-                if (hmap.get(c) != top) {
+                if(top != hmap.get(c)){
                     return false;
                 }
             } else {
@@ -44,7 +32,7 @@ public class ValidParenthesis_20 {
             }
         }
         return st.isEmpty();
-    }*/
+    }
 
     public static void main(String[] args) {
         String s1 = "()";
