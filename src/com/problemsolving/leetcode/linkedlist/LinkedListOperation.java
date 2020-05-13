@@ -1,5 +1,7 @@
 package com.problemsolving.leetcode.linkedlist;
 
+import java.util.HashMap;
+
 public class LinkedListOperation {
 
     /**
@@ -84,4 +86,29 @@ public class LinkedListOperation {
         return head;
     }
 
+    /**
+     * Write a program to find the node at which the intersection of two singly linked lists begins.
+     * As List1/List2 both traverse same distance after completing others as well.
+     * If there is intersection, and length are same then they will meet on first traversal.
+     * If there is intersection but length is different then they will meet at second traversal.
+     * If there is no intersection point then both the list will be null after completing both round at the
+     * same time.
+     */
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        ListNode nodeA = headA;
+        ListNode nodeB = headB;
+        if(nodeA == null || nodeB == null) return null;
+        while (true) {
+            if(nodeA == nodeB) return nodeA;
+            nodeA = nodeA.next;
+            nodeB = nodeB.next;
+            if(nodeA == null && nodeB == null) return null;
+            if (nodeA == null) {
+                nodeA = headB;
+            }
+            if (nodeB == null) {
+                nodeB = headA;
+            }
+        }
+    }
 }
