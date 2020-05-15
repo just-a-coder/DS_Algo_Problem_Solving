@@ -11,24 +11,26 @@ package com.problemsolving.leetcode.graph;
  * Output: 27
  * Explanation: One 1 at depth 1, one 4 at depth 2, and one 6 at depth 3; 1 + 4*2 + 6*3 = 27.
  */
-public class DepthSum_339 {
+// Working Code
+/*public class DepthSum_339 {
     public int depthSum(List<NestedInteger> nestedList) {
-        int depth;
-        return findDepth(nestedList,1,0);
+        if(nestedList.size() == 0)
+            return 0;
+        int depth = 1;
+        int result = 0;
+        return findDepth(nestedList,depth);
     }
 
-    public int findDepth(List<NestedInteger> nestedList, int depth, int result) {
-        if(nestedList.getInteger() != null){
-            depth * nestedList.getInteger();
-        }
-
-        if (nestedList.getList() != null) {
-
-        }
+    public int findDepth(List<NestedInteger> nestedList, int depth) {
+        int result = 0;
 
         for (NestedInteger ni : nestedList) {
-            if()
+            if (ni.isInteger()) {
+                result += depth * ni.getInteger();
+            }else{
+                result += findDepth(ni.getList(), depth + 1);
+            }
         }
-
+        return result;
     }
-}
+}*/
