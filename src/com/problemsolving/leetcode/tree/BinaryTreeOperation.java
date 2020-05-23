@@ -182,6 +182,92 @@ public class BinaryTreeOperation {
             return 0;
         int leftDepth = maxDepth(root.left);
         int rightDepth = maxDepth(root.right);
-        return Math.max(leftDepth,rightDepth)+1;
+        return Math.max(leftDepth, rightDepth) + 1;
+    }
+
+    /**
+     * Two binary trees are considered leaf-similar if their leaf value sequence is the same.
+     * Return true if and only if the two given trees with head nodes root1 and root2 are leaf-similar.
+     */
+    public boolean leafSimilar(TreeNode root1, TreeNode root2) {
+        List<Integer> alist1 = new ArrayList<>();
+        List<Integer> alist2 = new ArrayList<>();
+        dfs(root1, alist1);
+        dfs(root2, alist2);
+        if (alist1.equals(alist2)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private void dfs(TreeNode root, List<Integer> alist) {
+        if (root == null) return;
+        if (root.left == null && root.right == null) {
+            alist.add(root.val);
+        } else {
+            dfs(root.left, alist);
+            dfs(root.right, alist);
+        }
+    }
+
+    /**
+     * Invert a Tree
+     */
+
+    public TreeNode invertTree(TreeNode root) {
+        if (root != null) {
+            TreeNode left = invertTree(root.left);
+            TreeNode right = invertTree(root.right);
+            root.left = right;
+            root.right = left;
+        }
+        return root;
+    }
+
+    /**
+     * Given a binary search tree and the lowest and highest boundaries as L and R,
+     * trim the tree so that all its elements lies in [L, R] (R >= L).
+     */
+    public TreeNode trimBST(TreeNode root, int L, int R) {
+        if(root == null) return null;
+        if(root.val>R) return trimBST(root.left,L,R);
+        if(root.val<L) return trimBST(root.right,L,R);
+
+        root.left = trimBST(root.left,L,R);
+        root.right = trimBST(root.right,L,R);
+        return root;
+    }
+
+    /**
+     *  Level order Traversal of a Binary Tree
+     */
+    List<List<Integer>> alist;
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        alist = new ArrayList<>();
+        levelOrderTraversal(root,alist);
+        return alist;
+    }
+    Deque<TreeNode> queue = new ArrayDeque<>();
+    private void levelOrderTraversal(TreeNode root, List<List<Integer>> alist) {
+        if(root == null) return;
+        queue.push(root);
+        List<Integer> sub = new ArrayList<>();
+        sub.add(root.val);
+        alist.add(sub);
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+            List<Integer> subList = new ArrayList<>();
+            if (node.left != null) {
+                queue.addLast(node.left);
+                subList.add(node.left.val);
+            }
+            if (node.right != null) {
+                queue.addLast(node.right);
+                subList.add(node.right.val);
+            }
+            if(!subList.isEmpty())
+            alist.add(subList);
+        }
     }
 }
