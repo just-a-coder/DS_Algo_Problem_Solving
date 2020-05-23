@@ -72,15 +72,17 @@ public class BinaryTree {
     // Driver code
     public static void main(String[] args) {
         BinaryTree tree = new BinaryTree();
-        tree.root = new TreeNode(10);
-        tree.root.left = new TreeNode(5);
-        tree.root.right = new TreeNode(15);
-        tree.root.left.left = new TreeNode(3);
-        tree.root.left.right = new TreeNode(7);
-        tree.root.right.right = new TreeNode(18);
+        tree.root = new TreeNode(1);
+        tree.root.left = new TreeNode(0);
+        tree.root.right = new TreeNode(1);
+        tree.root.left.left = new TreeNode(0);
+        tree.root.left.right = new TreeNode(1);
+        tree.root.right.left = new TreeNode(0);
+        tree.root.right.right = new TreeNode(1);
 
         BinaryTreeOperation treeOperation = new BinaryTreeOperation();
-        System.out.println("Range Sum:"+ treeOperation.rangeSumBST(tree.root,7,15));
+        //System.out.println("Range Sum:"+ treeOperation.rangeSumBST(tree.root,7,15));
         prettyPrintTree(tree.root);
+        System.out.println("Sum Root To Leaf: "+treeOperation.sumRootToLeaf(tree.root));
     }
 }
