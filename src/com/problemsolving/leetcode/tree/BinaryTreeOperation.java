@@ -230,44 +230,76 @@ public class BinaryTreeOperation {
      * trim the tree so that all its elements lies in [L, R] (R >= L).
      */
     public TreeNode trimBST(TreeNode root, int L, int R) {
-        if(root == null) return null;
-        if(root.val>R) return trimBST(root.left,L,R);
-        if(root.val<L) return trimBST(root.right,L,R);
+        if (root == null) return null;
+        if (root.val > R) return trimBST(root.left, L, R);
+        if (root.val < L) return trimBST(root.right, L, R);
 
-        root.left = trimBST(root.left,L,R);
-        root.right = trimBST(root.right,L,R);
+        root.left = trimBST(root.left, L, R);
+        root.right = trimBST(root.right, L, R);
         return root;
     }
 
     /**
-     *  Level order Traversal of a Binary Tree
+     * Level order Traversal of a Binary Tree
      */
-    List<List<Integer>> alist;
     public List<List<Integer>> levelOrder(TreeNode root) {
-        alist = new ArrayList<>();
-        levelOrderTraversal(root,alist);
-        return alist;
-    }
-    Deque<TreeNode> queue = new ArrayDeque<>();
-    private void levelOrderTraversal(TreeNode root, List<List<Integer>> alist) {
-        if(root == null) return;
-        queue.push(root);
-        List<Integer> sub = new ArrayList<>();
-        sub.add(root.val);
-        alist.add(sub);
+        List<List<Integer>> result = new ArrayList<>();
+        if (root == null) return result;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
         while (!queue.isEmpty()) {
-            TreeNode node = queue.poll();
-            List<Integer> subList = new ArrayList<>();
-            if (node.left != null) {
-                queue.addLast(node.left);
-                subList.add(node.left.val);
+            int size = queue.size();
+            List<Integer> list = new ArrayList<>();
+            while (size-- > 0) {
+                TreeNode temp = queue.poll();
+                if (temp.left != null) {
+                    queue.offer(temp.left);
+                }
+                if (temp.right != null) {
+                    queue.offer(temp.right);
+                }
+                list.add(temp.val);
             }
-            if (node.right != null) {
-                queue.addLast(node.right);
-                subList.add(node.right.val);
-            }
-            if(!subList.isEmpty())
-            alist.add(subList);
+            result.add(list);
         }
+        return result;
+    }
+
+    /**
+     *  Minimum Depth Of a Binary Tree.
+     *  Whenever minimum/shortest will come, think about BFS.
+     */
+    public int minDepth(TreeNode root) {
+        if(root == null) return 0;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        int level = 0;
+        while(!queue.isEmpty()){
+            int size = queue.size();
+            ++level;
+            while(size-- >0){
+                TreeNode temp = queue.poll();
+                if(temp.left != null){
+                    if(isLeaf(temp.left)){
+                        return level+1;
+                    }else{
+                        queue.add(temp.left);
+                    }
+                }
+
+                if(temp.right != null){
+                    if(isLeaf(temp.right)){
+                        return level+1;
+                    }else{
+                        queue.add(temp.right);
+                    }
+                }
+            }
+        }
+        return level;
+    }
+
+    private boolean isLeaf(TreeNode root){
+        return (root.left == null && root.right == null);
     }
 }
