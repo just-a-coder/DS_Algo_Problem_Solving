@@ -1,4 +1,4 @@
-package com.problemsolving.leetcode.twopointer.easy;
+package com.problemsolving.leetcode.twopointer;
 
 import java.util.Arrays;
 

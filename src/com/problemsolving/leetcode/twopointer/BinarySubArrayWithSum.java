@@ -1,4 +1,4 @@
-package com.problemsolving.leetcode.twopointer.medium;
+package com.problemsolving.leetcode.twopointer;
 
 public class BinarySubArrayWithSum {
     public static int numSubarraysWithSum(int[] A, int S) {
