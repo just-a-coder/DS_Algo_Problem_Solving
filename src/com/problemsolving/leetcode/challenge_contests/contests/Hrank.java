@@ -4,7 +4,7 @@ import com.problemsolving.leetcode.heap.medium.SortCharacterByFrequency_451;
 
 import java.util.*;
 
-public class Contest_Weekly {
+public class Hrank {
 
 
     public static int fewestCoins(String coins) {
