@@ -1,9 +1,4 @@
-package com.problemsolving.leetcode.array;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+package com.problemsolving.leetcode.array.easy;
 
 public class FlipAnImage_832 {
     public static int[][] flipAndInvertImage(int[][] A) {

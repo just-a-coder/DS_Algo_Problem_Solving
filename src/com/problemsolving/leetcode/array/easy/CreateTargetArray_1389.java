@@ -1,4 +1,4 @@
-package com.problemsolving.leetcode.array;
+package com.problemsolving.leetcode.array.easy;
 
 public class CreateTargetArray_1389 {
     public static int[] createTargetArray(int[] nums, int[] index) {
