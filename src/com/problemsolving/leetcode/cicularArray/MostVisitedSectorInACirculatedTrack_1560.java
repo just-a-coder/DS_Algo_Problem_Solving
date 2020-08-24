@@ -22,8 +22,8 @@ public class MostVisitedSectorInACirculatedTrack_1560 {
     }
 
     public static void main(String[] args) {
-        int n = 12;
-        int arr[] = new int[]{5,2};
+        int n = 6;
+        int arr[] = new int[]{6,2};
         mostVisited(n,arr).stream().forEach(System.out::println);
     }
 }
