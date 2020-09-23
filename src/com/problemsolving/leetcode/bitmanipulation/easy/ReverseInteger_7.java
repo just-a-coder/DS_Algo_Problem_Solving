@@ -1,4 +1,4 @@
-package com.problemsolving.leetcode.bitmanipulation;
+package com.problemsolving.leetcode.bitmanipulation.easy;
 
 public class ReverseInteger_7 {
     public int reverse(int x) {
